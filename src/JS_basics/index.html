@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<!-- DOM-Document Object Model-->
+     <div>
+         <h1 id="name">Devina</h1>
+            <p>My name is Devina</p>
+         <h2>Agrawal</h2>
+     </div>
+<ul id="d">
+    <li id="n">Devina</li>
+    <li>Harsh</li>
+    <li>Devina</li>
+    <li>Harsh</li>
+    <li>Devina</li>
+    <li>Harsh</li>
+    <li>Devina</li>
+    <li>Harsh</li>
+</ul>
+<button id="strt">START</button>
+<button id="stop">STOP</button>
+</body>
+
+
+<script src="code.js"></script>
+
+<script>
+    // document.querySelector('h1').style.color = 'red';
+    // const parent = document.querySelector('div');
+    // console.log(parent.children);
+    // const arr=Array.from(parent.children);
+    // // console.log(arr[1].innerHTML);
+    // // console.log(arr[1].firstChild); //text node
+    // // console.log(arr[1].firstElementChild);
+    // console.log(parent.childNodes);
+    // // arr.forEach((child)=>{
+    // //     // child.style.color='blue';
+    // //     console.log(child);
+    // // });
+    //
+    // // console.log(parent.childNodes);
+    // // console.log(parent.children);
+    //
+    //
+    // //.parentElement
+    // //nextElementSibling
+    //
+    //
+    // const h2=document.createElement('h2');
+    // console.log(h2);
+    // h2.id='new';
+    // h2.className='newclass';
+    //
+    // // h2.innerText='This is a new element';
+    //          //OR
+    // const txt=document.createTextNode('This is a new element');
+    // h2.appendChild(txt);
+    //
+    // h2.setAttribute('title','new title');
+    // h2.style.color='green';
+    // //console.log(h2);
+    //
+    //   document.body.appendChild(h2);
+
+    const new_li= document.createElement('li')
+    // new_li.innerText='Devil';
+    //OR
+    new_li.appendChild(document.createTextNode('Devil'));
+    console.log(new_li.innerText);
+    document.querySelector('ul').appendChild(new_li);
+
+    function addElement(n){
+        const new_li= document.createElement('li')
+        new_li.appendChild(document.createTextNode(n));
+        document.querySelector('ul').appendChild(new_li);
+    }
+    addElement('Lucifer');
+
+
+    //edit or replace
+    const val=document.querySelector('li:nth-child(2)').innerText="Harsh Pandey";
+    // const val=document.querySelector('li:nth-child(2)')
+    // const nval=document.createElement('li');
+    // nval.textContent='Harsh Pandey';
+    // val.replaceWith(nval);
+
+
+    //remove
+    const val1=document.querySelector('li:nth-child(4)').remove();
+
+
+</script>
+</html>

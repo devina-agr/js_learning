@@ -1,12 +1,12 @@
-const apiKey='86ce189b56633d5f1803a003fa3a33bf';
-const apiUrl='https://api.openweathermap.org/data/2.5/weather?units=metric&q=varanasi';
-const searchBox=document.getElementsByClassName('search input');
-const searchBtn=document.getElementsByClassName('search button');
+const apiKey="86ce189b56633d5f1803a003fa3a33bf";
+const apiUrl="api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const searchBox=document.getElementById('search-box');
+const searchBtn=document.getElementById('search-btn');
 
 
-async function checkWeather(city){
-    const response=await fetch(apiUrl+ city +`&appid=${apiKey}`);
-    let data=await response.json();
+async function checkWeather(city) {
+    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+    let data = await response.json();
     console.log(data);
 
     document.getElementsByClassName('location').innerHTML=data.name;

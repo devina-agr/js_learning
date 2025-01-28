@@ -1,16 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Weather</title>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <div id="search-box">
-            <input type="text" placeholder="Enter the city">
-             <button>Find</button>
+
+<div class="weather-card">
+    <div class="search">
+        <input type="text" placeholder="Search">
+        <button><img src="weather-app-img/images/search.png" width="22" height="24"/></button>
+    </div>
+
+    <div class="weather-icon">
+        <img src="weather-app-img/images/clouds.png" height="224" width="224"/></i>
+    </div>
+
+    <div class="temperature">22°C</div>
+    <div class="location">New York</div>
+
+    <div class="details">
+        <div class="detail">
+
+           <div class="humidity"> <img src="weather-app-img/images/humidity.png" height="17" width="29"/>
+               64%</div>
+            <span>Humidity</span>
+        </div>
+        <div class="detail">
+            <div class="speed"><img src="weather-app-img/images/wind.png" height="27" width="25"/>
+                18 km/h</div>
+            <span>Wind Speed</span>
         </div>
     </div>
+</div>
 
 </body>
 </html>

@@ -15,20 +15,24 @@
     margin-bottom: 100px;
     color: gainsboro;
 }
-#option{
+#box{
     width: 600px;
     height: 450px;
     margin: 20px;
     border: 2px dashed #000000;
     box-shadow: 15px 15px 5px #06334c;
 }
-.list{
+button{
     background-color: #8f8e8e;
     height: 60px;
+    width: 565px;
     margin: 15px;
     display: flex;
     align-items: center;
     cursor: pointer;
+}
+button:hover:not([disabled]){
+    background-color: #afb3b5;
 }
 #btn{
     margin-left: 40%;
@@ -37,4 +41,8 @@
     width: 100px;
     height: 30px;
     display: none;
+}
+#que{
+    margin-left: 30px;
+    margin-top: 30px;
 }

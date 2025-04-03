@@ -157,3 +157,15 @@ document.getElementById('stop').addEventListener('click', () => {
 });
 // const rem= e.target.parentNode
 //e.preventdefault() stops the default behaviour of the element
+
+//**********************************************************************************************************************
+
+//EVEN ODD
+
+// let n=5
+// if (n%2==0){
+//     console.log("even")
+// }
+// else{
+//     console.log("odd")
+// }

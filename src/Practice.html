@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Practice</title>
+</head>
+<body style="background-color: #2c2c2c; color:white">
+    <ul class="parent">
+        <li class="child">
+            Javascript
+        </li>
+        <li class="child">
+            Java
+        </li>
+    </ul>
+</body>
+<script>
+    // const p= document.querySelector('.parent')
+    // const li= document.createElement("li")
+    // const txt= document.createTextNode("Python")
+    // li.appendChild(txt)
+    // p.appendChild(li)
+
+    function addLi(txt){
+        const p= document.querySelector('.parent')
+        const li= document.createElement("li")
+        const inp= document.createTextNode(txt)     //${txt}`
+        li.appendChild(inp)
+        p.appendChild(li)
+    }
+    addLi("Python")
+    addLi("Ruby")
+
+</script>
+</html>

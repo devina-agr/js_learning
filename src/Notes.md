@@ -976,5 +976,147 @@ It is the opposite of bubbling up, it starts from the parent and goes to the tar
     
 
 
+### API
+
+- **API** - Application Programming Interface, it is used to connect two applications.It is used to get data from the server.
 
 
+
+### XMLHttp Request
+
+- It is used to make a request to the server and get the data from the server.
+- It is used to send data to the server.
+- It is used to get data from the server.
+
+        const request = new XMLHttpRequest();
+
+        request.open('GET', '<link>', true);
+
+        request.onreadystatechange = function() {
+            console.log(request.readyState);
+
+            if(request.readyState === 4){
+                const data =  JSON.parse(this.responseText);    //converts the string to object
+                console.log(data.<any_attribute>);
+            }
+        }
+
+        request.send();
+
+
+### Promise
+
+A promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+
+- It is used to handle asynchronous code.
+- It is used to handle the response of the server.
+
+
+A promise has three states:
+
+1) **Pending** - The initial state of a promise, neither fulfilled nor rejected.
+2) **Fulfilled** - The promise has been fulfilled, and the result is available.
+3) **Rejected** - The promise has been rejected, and the error is available.
+
+
+    const promise = new Promise((resolve, reject) => {
+        const x = 10;
+        const y = 20;
+    
+        if(x + y === 30){
+            resolve("Success");
+        } else {
+            reject("Error");
+        }
+    });
+    promise
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+        .finally(() => {
+            console.log("Promise is settled");
+        });
+
+NOTE: We can use multiple `then` and `catch` methods to handle the response of the server.
+
+### async and await:
+
+- Alternative of then and catch.
+
+        const promise = new Promise((resolve, reject) => {
+            const x = 10;
+            const y = 20;
+        
+            if(x + y === 30){
+                resolve("Success");
+            } else {
+                reject("Error");
+            }
+        });
+        
+
+        //async function
+
+        async function getData(){
+            try{
+                const res = await promise;
+                console.log(res);
+            } catch(err){
+                console.log(err);
+            } finally{
+                console.log("Promise is settled");
+            }
+        }
+        
+        getData();
+
+
+### Fetch API:
+
+
+- **Using async and await:**
+
+        async function getUsers(){
+            const resp = await fetch('https://jsonplaceholder.typicode.com/users');
+            const data = await resp.json();
+            console.log(data);
+            data.forEach((user) => {
+                console.log(user.name);
+            });
+        }
+
+- **Using then and catch:**
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                data.forEach((user) => {
+                    console.log(user.name);
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+**IMP:** _When we make a request to promise and an error of 404 occurs, it does not go to the catch block, it goes to the then block and gives an error in the console._
+_We get an error only when it was not able to make a request to the server._
+
+
+### Working of fetch API:
+
+
+**1) Data:**
+
+- Onfulfilled[]
+- On rejection[]
+
+These arrays are private and are not accessible to the user.
+
+**2) Web Browser/ Node:**
+
+It makes a network request to the server and gets the data.
